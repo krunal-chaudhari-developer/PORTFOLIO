@@ -42,7 +42,6 @@ const Home = () => {
             <br />
             {/* social media icons */}
             <div className="flex flex-col items-center md:flex-row justify-between space-y-6 md:space-y-0">
-              {" "}
               <div className="space-y-2">
                 <h1 className="font-bold text-center">Available on</h1>
                 <ul className="flex space-x-5">

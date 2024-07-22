@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import pic from "../assets/photo.avif";
 import { AiOutlineMenu } from "react-icons/ai";
 import { IoCloseSharp } from "react-icons/io5";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(true);
@@ -46,7 +47,15 @@ const Navbar = () => {
             {navItems.map((item, index) => (
               <div key={index} className="">
                 <li className="hover:scale-105 duration-200 cursor-pointer">
-                  {item.text}
+                  <Link
+                    to={item.text}
+                    smooth={true}
+                    duration={500}
+                    offset={-70}
+                    activeClass="active"
+                  >
+                    {item.text}
+                  </Link>
                 </li>
               </div>
             ))}
@@ -60,12 +69,21 @@ const Navbar = () => {
       {/* Mobile Navbar */}
 
       {!menu && (
-        <div className="">
+        <div className="bg-white">
           <ul className="md:hidden flex flex-col h-screen items-center justify-center space-y-3 text-xl">
             {navItems.map((item, index) => (
               <div key={index} className="">
                 <li className="hover:scale-105 duration-200 cursor-pointer">
-                  {item.text}
+                  <Link
+                    onClick={() => setMenu(!menu)}
+                    to={item.text}
+                    smooth={true}
+                    duration={500}
+                    offset={-70}
+                    activeClass="active"
+                  >
+                    {item.text}
+                  </Link>
                 </li>
               </div>
             ))}
