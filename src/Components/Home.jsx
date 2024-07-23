@@ -12,17 +12,6 @@ import pic from "../assets/photo.avif";
 import { BiDownload } from "react-icons/bi";
 
 const Home = () => {
-  const handleDownload = () => {
-    const pdfUrl =
-      "https://drive.google.com/file/d/1JIIhubw7EkpEwE02X9YVyRuAljSnI287/view?usp=drive_link"; // Replace with your PDF file URL
-    const link = document.createElement("a");
-    link.href = window.open(pdfUrl);
-    link.download = "resume.pdf"; // Replace with your desired file name
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
     <>
       <div
@@ -55,7 +44,11 @@ const Home = () => {
             <div className="">
               <h1 className="font-semibold">My CV:-</h1>
               <button
-                onClick={handleDownload}
+                onClick={() =>
+                  window.open(
+                    "https://drive.google.com/file/d/1JIIhubw7EkpEwE02X9YVyRuAljSnI287/view?usp=drive_link"
+                  )
+                }
                 className="flex bg bg-slate-200 px-3 py-1 mb-5 border shadow-sm shadow-black rounded-xl"
               >
                 <BiDownload className="my-1 mx-1" /> Click to View
