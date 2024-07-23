@@ -4,19 +4,30 @@ import {
   FaNodeJs,
   FaReact,
   FaSquareFacebook,
-  FaTelegram,
 } from "react-icons/fa6";
-import { IoLogoYoutube } from "react-icons/io5";
+import { IoLogoInstagram } from "react-icons/io5";
 import { SiExpress, SiMongodb } from "react-icons/si";
 import { ReactTyped } from "react-typed";
 import pic from "../assets/photo.avif";
+import { BiDownload } from "react-icons/bi";
 
 const Home = () => {
+  const handleDownload = () => {
+    const pdfUrl =
+      "https://drive.google.com/file/d/1JIIhubw7EkpEwE02X9YVyRuAljSnI287/view?usp=drive_link"; // Replace with your PDF file URL
+    const link = document.createElement("a");
+    link.href = window.open(pdfUrl);
+    link.download = "resume.pdf"; // Replace with your desired file name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <>
       <div
         name="Home"
-        className="max-w-screen-2xl container mx-auto px-4 md:px-20 my-28"
+        className="max-w-screen-2xl container mx-auto px-4 md:px-20 my-20"
       >
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2 mt-12 md:mt-24 space-y-2 order-2 md:order-1">
@@ -34,28 +45,57 @@ const Home = () => {
             </div>
             <br />
             <p className="text-sm md:text-base text-justify">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione
-              labore eius nemo commodi praesentium porro possimus, veniam
-              suscipit autem doloribus, placeat delectus! Doloremque consequatur
-              vel dolorum aspernatur culpa repellendus magnam.
+              My name is Krunal Chaudhari. I'm a Web Developer/MERN stack
+              Developer. I also work on Live Projects. I used the technologies
+              named HTML, CSS, JavaScript, ReactJS, Bootstrap, TailwindCSS and
+              NodeJS. I make some projects during summer internship, I mentioned
+              that projects in my Portfolio.
             </p>
             <br />
+            <div className="">
+              <h1 className="font-semibold">My CV:-</h1>
+              <button
+                onClick={handleDownload}
+                className="flex bg bg-slate-200 px-3 py-1 mb-5 border shadow-sm shadow-black rounded-xl"
+              >
+                <BiDownload className="my-1 mx-1" /> Click to View
+              </button>
+            </div>
+
             {/* social media icons */}
             <div className="flex flex-col items-center md:flex-row justify-between space-y-6 md:space-y-0">
               <div className="space-y-2">
                 <h1 className="font-bold text-center">Available on</h1>
                 <ul className="flex space-x-5">
                   <li>
-                    <FaSquareFacebook className="text-2xl cursor-pointer" />
+                    <FaSquareFacebook
+                      onClick={() =>
+                        window.open(
+                          "https://www.facebook.com/share/hWbmjj98u2CpYgW5/?mibextid=qi2Omg"
+                        )
+                      }
+                      className="text-2xl cursor-pointer hover:scale-110 duration-200"
+                    />
                   </li>
                   <li>
-                    <FaLinkedin className="text-2xl cursor-pointer" />
+                    <FaLinkedin
+                      onClick={() =>
+                        window.open(
+                          "https://www.linkedin.com/in/krunal-chaudhari-384a63209?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        )
+                      }
+                      className="text-2xl cursor-pointer hover:scale-110 duration-200"
+                    />
                   </li>
                   <li>
-                    <IoLogoYoutube className="text-2xl cursor-pointer" />
-                  </li>
-                  <li>
-                    <FaTelegram className="text-2xl cursor-pointer" />
+                    <IoLogoInstagram
+                      onClick={() =>
+                        window.open(
+                          "https://www.instagram.com/krunal.chaudhari3?igsh=cTJnZmIydTIwMTFq"
+                        )
+                      }
+                      className="text-2xl cursor-pointer hover:scale-110 duration-200"
+                    />
                   </li>
                 </ul>
               </div>

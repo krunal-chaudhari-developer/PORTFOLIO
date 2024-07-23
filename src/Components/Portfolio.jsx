@@ -1,42 +1,38 @@
 import React from "react";
-import java from "../assets/java.png";
-import python from "../assets/python.webp";
-import mongoDB from "../assets/mongodb.jpg";
-import express from "../assets/express.png";
-import reactjs from "../assets/reactjs.png";
-import nodejs from "../assets/node.png";
+import inlifa from "../assets/portfolio/inlifa.png";
+import hoobank from "../assets/portfolio/Hoobank website.png";
+import newsmonkey from "../assets/portfolio/newsmonkey.png";
+import todo from "../assets/portfolio/i-task todo.png";
 
 const Portfolio = () => {
   const cardItem = [
     {
       id: 1,
-      logo: mongoDB,
-      name: "MongoDB",
+      logo: todo,
+      name: "i-Task Todo",
+      demo: "https://i-tasktodolist.netlify.app/",
+      code: "https://github.com/krunal-chaudhari-developer/TO_DO_LIST",
     },
     {
       id: 2,
-      logo: java,
-      name: "Java",
+      logo: inlifa,
+      name: "Online Video Downloader",
+      demo: "https://inlifa.netlify.app/",
+      code: "https://github.com/krunal-chaudhari-developer/Video_Downloader_Frontend",
     },
     {
       id: 3,
-      logo: python,
-      name: "Python",
+      logo: newsmonkey,
+      name: "News Website",
+      demo: "https://newsinreact.netlify.app/",
+      code: "https://github.com/krunal-chaudhari-developer/NEWSAPP_FRONTEND",
     },
     {
       id: 4,
-      logo: express,
-      name: "Express",
-    },
-    {
-      id: 5,
-      logo: reactjs,
-      name: "ReactJS",
-    },
-    {
-      id: 6,
-      logo: nodejs,
-      name: "NodeJS",
+      logo: hoobank,
+      name: "Bank website Design",
+      demo: "https://hoobanknetlify.netlify.app/",
+      code: "https://github.com/krunal-chaudhari-developer/MODERN_BANK_APP",
     },
   ];
   return (
@@ -49,28 +45,29 @@ const Portfolio = () => {
           <h1 className="text-3xl font-bold mb-5">Portfolio</h1>
           <span className="underline font-semibold">Featured Projects</span>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 my-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-3 my-5">
             {cardItem.map((item, index) => (
               <div
                 key={index}
-                className="md:w-[300px] md:h-[300px] border-[2px] bg-white rounded-lg shadow-lg p-1 cursor-pointer hover:scale-110 duration-300"
+                className="md:w-[300px] bg-white shadow-lg border rounded-2xl p-1 cursor-pointer hover:scale-110 duration-300"
               >
                 <img
                   src={item.logo}
                   alt={item.name}
-                  className="w-[120px] h-[120px] p-1 rounded-full border-[2px]"
+                  className="w-96 p-1 rounded-t-xl"
                 />
-                <div className="">
-                  <div className="font-bold text-xl mb-2 px-2">{item.name}</div>
-                  <p className="px-2 text-gray-700">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </p>
-                </div>
+                <div className="font-bold text-xl my-2 px-2">{item.name}</div>
                 <div className="px-6 py-4 justify-around space-x-2 md:space-x-4">
-                  <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded">
+                  <button
+                    onClick={() => window.open(item.demo)}
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded"
+                  >
                     Demo
                   </button>
-                  <button className="bg-green-500 hover:bg-green-700 text-white font-bold px-4 py-2 rounded">
+                  <button
+                    onClick={() => window.open(item.code)}
+                    className="bg-green-500 hover:bg-green-700 text-white font-bold px-4 py-2 rounded"
+                  >
                     Source Code
                   </button>
                 </div>

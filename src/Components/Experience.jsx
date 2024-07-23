@@ -1,11 +1,14 @@
 import React from "react";
 import html from "../assets/html.png";
 import css from "../assets/css.jpg";
-import java from "../assets/java.png";
 import javascript from "../assets/javascript.png";
-import oracle from "../assets/oracle.png";
-import spring from "../assets/spring.png";
-import springboot from "../assets/springBoot.jpg";
+import tailwind from "../assets/tailwind.png";
+import bootstrap from "../assets/bootstrap.jpg";
+import reactjs from "../assets/reactjs.png";
+import nodejs from "../assets/node.png";
+import mongodb from "../assets/mongodb.jpg";
+import express from "../assets/express.png";
+import redux from "../assets/redux.jpg";
 
 const Experience = () => {
   const cardItem = [
@@ -21,8 +24,8 @@ const Experience = () => {
     },
     {
       id: 3,
-      logo: java,
-      name: "Java",
+      logo: tailwind,
+      name: "Tailwind",
     },
     {
       id: 4,
@@ -31,18 +34,33 @@ const Experience = () => {
     },
     {
       id: 5,
-      logo: oracle,
-      name: "Oracle",
+      logo: bootstrap,
+      name: "BootStrap",
     },
     {
       id: 6,
-      logo: spring,
-      name: "Spring",
+      logo: reactjs,
+      name: "ReactJS",
     },
     {
       id: 7,
-      logo: springboot,
-      name: "Spring Boot",
+      logo: nodejs,
+      name: "NodeJS",
+    },
+    {
+      id: 8,
+      logo: mongodb,
+      name: "MongoDB",
+    },
+    {
+      id: 9,
+      logo: express,
+      name: "Express",
+    },
+    {
+      id: 10,
+      logo: redux,
+      name: "Redux",
     },
   ];
   return (
